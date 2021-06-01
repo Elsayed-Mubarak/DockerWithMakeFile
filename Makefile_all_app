@@ -1,0 +1,9 @@
+build:
+	cd paypal-backend && $(MAKE) build
+	cd paypal-frontend && $(MAKE) build
+
+run:
+	docker-compose up
+
+stop:
+	docker-compose down
