@@ -1,0 +1,32 @@
+FROM node:latest
+
+WORKDIR /app
+
+# Copy the package.json to workdir
+COPY package.json ./
+
+COPY package-lock.json ./
+
+#RUN apk add --update nodejs nodejs-npm
+
+#RUN apt-get install vim
+
+RUN mkdir -p /etc/redis/
+RUN chmod 777 /etc/redis/
+COPY redis/redis.conf /etc/redis/
+
+# Run npm install - install the npm dependencies
+RUN npm install
+
+# Copy application source
+COPY . .
+
+# Generate build
+#RUN npm build
+
+# Start the application
+
+EXPOSE 5000
+
+#Default command
+CMD ["npm","start"]
