@@ -1,0 +1,1 @@
+aws ecr get-login-password --region us-east-1 | docker login --username isec-egypt --password-stdin 281200119695.dkr.ecr.us-east-1.amazonaws.com
