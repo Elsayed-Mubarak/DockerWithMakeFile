@@ -13,3 +13,9 @@ docker tag isec-asc:latest 281200119695.dkr.ecr.us-east-2.amazonaws.com/isec-asc
 
 4.Run the following command to push this image to your newly created AWS repository:
 docker push 281200119695.dkr.ecr.us-east-2.amazonaws.com/isec-asc:latest
+
+
+
+aws sso login --profile ci
+
+git checkout -b feature/pub-sub
